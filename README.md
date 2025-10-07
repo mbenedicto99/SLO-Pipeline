@@ -23,8 +23,8 @@ Este projeto implementa um pipeline completo de MLOps para **detecção de anoma
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/slo-mlops-pipeline.git
-cd slo-mlops-pipeline
+git clone https://github.com/mbenedicto99/SLO-Pipeline
+cd SLO-Pipeline
 
 # Crie e ative o ambiente virtual
 python3 -m venv venv

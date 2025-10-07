@@ -3,9 +3,11 @@ name: mlops_slo_project
 conda_env: conda.yaml
 
 entry_points:
-  isolation:
-    command: "python scripts/test_isolation_forest_complex.py"
+  main:
+    command: "python scripts/test_isolation_forest.py"
 
   gradient_descent:
     command: "python scripts/gradient_descent_3d.py"
 
+  isolation:
+    command: "python scripts/test_isolation_forest_complex.py"

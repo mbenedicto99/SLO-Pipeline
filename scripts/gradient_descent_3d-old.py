@@ -52,19 +52,13 @@ plt.show()
 
 print("📉 Gráfico de gradiente descendente salvo como 'gradient_descent_3d.png'")
 
-# Logar no MLflow (sem set_experiment)
+# Logar no MLflow
+mlflow.set_experiment("GradientDescent_3D")
 with mlflow.start_run():
     mlflow.log_param("learning_rate", lr)
     mlflow.log_param("steps", steps)
     mlflow.log_param("start_point", [5.0, 5.0])
     mlflow.log_param("end_point", [x, y])
-
-    mlflow.log_metric("final_x", x)
-    mlflow.log_metric("final_y", y)
-    mlflow.log_metric("final_z", func(x, y))
-    mlflow.log_metric("trajectory_length", len(trajectory))
-
     mlflow.log_artifact("gradient_descent_3d.png")
 
-    print("✅ Experimento logado no MLflow com métricas!")
-
+    print("✅ Experimento logado no MLflow com sucesso!")

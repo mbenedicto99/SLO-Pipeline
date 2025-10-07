@@ -14,8 +14,8 @@ from mlflow.models.signature import infer_signature
 print("✅ Bibliotecas importadas com sucesso!")
 
 # Gerar dados não lineares com ruído + dados mistos
-X1, _ = make_moons(n_samples=3000, noise=0.15, random_state=142)
-X2, _ = make_classification(n_samples=2000, n_features=5, n_informative=3, n_redundant=0, random_state=142)
+X1, _ = make_moons(n_samples=300, noise=0.15, random_state=42)
+X2, _ = make_classification(n_samples=200, n_features=5, n_informative=3, n_redundant=0, random_state=42)
 
 # Combinar e embaralhar
 X_combined = np.vstack([X1, X2[:, :2]])

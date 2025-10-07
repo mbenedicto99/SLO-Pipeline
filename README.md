@@ -118,7 +118,7 @@ Execute com:
 python test_env.py
 ```
 
-Você verá as confirmações no terminal e o run logado na interface do MLflow (http://localhost:5000).
+UI do MLflow (http://localhost:5000).
 
 ## 📜 Licença
 

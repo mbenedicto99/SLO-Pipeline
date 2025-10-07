@@ -1,3 +1,4 @@
+
 # 🧠 MLOps Pipeline - Análise de Anomalias orientado a SLOs
 
 Este projeto implementa um pipeline completo de MLOps para **detecção de anomalias em ambientes de nuvem**, orientado por **SLOs (Service Level Objectives)**. O objetivo é garantir a confiabilidade de sistemas distribuídos com monitoramento contínuo, alertas automáticos, e retraining de modelos com base em violações de SLOs.
@@ -16,6 +17,16 @@ Este projeto implementa um pipeline completo de MLOps para **detecção de anoma
 - 🔁 Recalibração automática com novo treinamento
 - 🚨 Alertas via Alertmanager
 - 👤 Interface para ajuste de SLOs com Streamlit
+
+---
+
+## 🧰 Requisitos
+
+- Python 3.9+
+- PostgreSQL
+- Prometheus + Alertmanager
+- MLflow
+- Virtualenv ou Conda
 
 ---
 
@@ -39,6 +50,18 @@ mlflow ui
 
 ---
 
+## ⚙️ Execução
+
+```bash
+# Executar pipeline completo (exemplo)
+python scripts/mlflow_test.py
+
+# Ou usar MLflow project
+mlflow run .
+```
+
+---
+
 ## 🗺️ Diagrama Mermaid
 
 ```mermaid
@@ -58,15 +81,8 @@ graph LR
   A --> B --> C --> D --> E --> F --> G --> H
   H --> I --> E
   H --> J --> K --> D
+
 ```
-
----
-
-## 🖼️ Diagrama Ilustrado
-
-> Representação visual do pipeline completo:
-
-![Pipeline MLOps](./MLOps-SLO.png)
 
 ---
 
@@ -84,43 +100,3 @@ graph LR
 ## 📜 Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
----
-
-## ✅ Teste rápido do ambiente
-
-Para verificar se o ambiente está corretamente configurado, execute este script de teste:
-
-```python
-# test_env.py
-
-import mlflow
-import pandas as pd
-from sklearn.ensemble import IsolationForest
-from sklearn.datasets import make_blobs
-
-print("✅ Bibliotecas importadas com sucesso!")
-
-# Gerar dados de exemplo
-X, _ = make_blobs(n_samples=100, centers=1, cluster_std=0.5, random_state=42)
-
-# Treinar modelo de exemplo
-model = IsolationForest(n_estimators=50)
-model.fit(X)
-
-print("✅ Modelo treinado com sucesso!")
-
-# Log no MLflow local
-mlflow.set_experiment("Teste_MLOps")
-with mlflow.start_run():
-    mlflow.log_param("n_estimators", 50)
-    mlflow.sklearn.log_model(model, "model")
-    print("✅ Modelo logado no MLflow!")
-```
-
-Execute com:
-
-```bash
-python test_env.py
-```
-
-Você verá as confirmações no terminal e o run logado na interface do MLflow (http://localhost:5000).

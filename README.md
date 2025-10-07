@@ -65,18 +65,18 @@ mlflow run .
 ## 🗺️ Diagrama Mermaid
 
 ```mermaid
-graph TD
-  A["Coleta de metricas\nda cloud"]
-  B["Armazenamento\nde data lake"]
-  C["Pre-processamento\nde dados"]
-  D["Analise orientada\na SLOs"]
-  E["Treinamento de modelo\nde deteccao de anomalias"]
-  F["Validacao baseada\nem SLOs"]
-  G["Deploy do modelo\nem ambiente cloud"]
-  H["Monitoramento\nem tempo real"]
-  I["Recalibracao automatica\n(retraining)"]
-  J["Alerta e resposta\na incidentes"]
-  K["Ajuste de SLOs\ncom base em feedback"]
+graph LR
+  A["Coleta de métricas<br/>da cloud"]
+  B["Armazenamento<br/>em data lake"]
+  C["Pré-processamento<br/>de dados"]
+  D["Análise orientada<br/>a SLOs"]
+  E["Treinamento de modelo<br/>de detecção de anomalias"]
+  F["Validação baseada<br/>em SLOs"]
+  G["Deploy do modelo<br/>em ambiente cloud"]
+  H["Monitoramento<br/>em tempo real"]
+  I["Recalibração automática<br/>retraining"]
+  J["Alerta e resposta<br/>a incidentes"]
+  K["Ajuste de SLOs<br/>com base em feedback"]
 
   A --> B --> C --> D --> E --> F --> G --> H
   H --> I --> E

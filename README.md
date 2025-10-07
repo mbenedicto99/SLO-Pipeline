@@ -120,6 +120,73 @@ python test_env.py
 
 UI do MLflow (http://localhost:5000).
 
+---
+
+## 🚀 Execução dos Experimentos com MLflow
+
+Este projeto é compatível com **MLflow Projects**. Você pode executar os experimentos diretamente da linha de comando.
+
+### ✅ Usando ambiente virtual (sem Conda)
+
+Certifique-se de ativar seu ambiente `venv` e execute com `--no-conda`:
+
+```bash
+mlflow run . --no-conda -e isolation
+mlflow run . --no-conda -e gradient_descent
+```
+
+### ✅ Usando Conda (se disponível)
+
+```bash
+mlflow run . -e isolation
+mlflow run . -e gradient_descent
+```
+
+### ✅ Executar experimento padrão (`main`)
+
+Se o `MLproject` incluir um entry point `main`, use:
+
+```bash
+mlflow run . --no-conda
+```
+
+---
+
+## 🧪 Entry Points disponíveis
+
+| Entry Point       | Descrição                                              |
+|-------------------|--------------------------------------------------------|
+| `isolation`       | Detecção de anomalias com Isolation Forest (complexo) |
+| `gradient_descent`| Visualização de descida com Gradiente Descendente 3D  |
+
+---
+
+## 🧹 Solução de Problemas
+
+### ❌ `Could not find Conda executable`
+> Execute com `--no-conda` se estiver usando ambiente `venv`.
+
+### ❌ `Could not find main among entry points`
+> Use `-e <entry_point>` com o nome correto ou defina um `main` no MLproject.
+
+### ❌ `Could not find experiment with ID 0`
+> Execute `mlflow.set_experiment("nome")` no script e remova o diretório `mlruns/`.
+
+```bash
+rm -rf mlruns/
+```
+
+---
+
+## 📦 Organização dos scripts
+
+| Script                              | Função                                     |
+|-------------------------------------|--------------------------------------------|
+| `test_isolation_forest.py`          | Anomalias simples                          |
+| `test_isolation_forest_complex.py`  | Anomalias com dados mistos e PCA           |
+| `test_env_rf.py`                    | Classificação com RandomForest             |
+| `gradient_descent_3d.py`            | Descida de montanha em 3D com visualização |
+
 ## 📜 Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).

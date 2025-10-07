@@ -112,12 +112,6 @@ with mlflow.start_run():
     print("✅ Modelo logado no MLflow!")
 ```
 
-Execute com:
-
-```bash
-python test_env.py
-```
-
 UI do MLflow (http://localhost:5000).
 
 ---

@@ -1,0 +1,10 @@
+name: mlops-anomalias
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - scikit-learn
+  - pandas
+  - pip
+  - pip:
+      - mlflow

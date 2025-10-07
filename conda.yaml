@@ -1,10 +1,11 @@
-name: mlops-anomalias
+name: mlops_slo_env
 channels:
   - defaults
 dependencies:
   - python=3.9
-  - scikit-learn
-  - pandas
   - pip
   - pip:
       - mlflow
+      - scikit-learn
+      - pandas
+      - matplotlib

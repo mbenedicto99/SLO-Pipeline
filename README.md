@@ -81,11 +81,6 @@ graph LR
 
 ---
 
-## 📜 Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
----
-
 ## ✅ Teste rápido do ambiente
 
 Para verificar se o ambiente está corretamente configurado, execute este script de teste:
@@ -124,3 +119,7 @@ python test_env.py
 ```
 
 Você verá as confirmações no terminal e o run logado na interface do MLflow (http://localhost:5000).
+
+## 📜 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
